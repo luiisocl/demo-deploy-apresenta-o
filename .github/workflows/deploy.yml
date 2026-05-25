@@ -1,0 +1,22 @@
+name: Deploy para Producao
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar codigo
+        uses: actions/checkout@v3
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Rodar testes
+        run: npm test
+
+      - name: Deploy no Vercel
+        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --yes

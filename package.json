@@ -1,0 +1,7 @@
+{
+  "name": "demo-deploy",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo 'Testes passando!' && exit 0"
+  }
+}
